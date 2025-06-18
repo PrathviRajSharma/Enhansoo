@@ -1,6 +1,8 @@
 import React from "react";
 import Loading from "./Loading";
 import CompareImage from "react-compare-image";
+import afterImage from "/Images/after.jpg";
+import beforeImage from "/Images/before.jpg";
 
 function ImagePreview(props) {
   return (
@@ -10,7 +12,7 @@ function ImagePreview(props) {
         {props.loading ? (
           <div className="relative w-full h-full">
             <img
-              src={props.uploaded || "../Images/before.jpg"}
+              src={props.uploaded || beforeImage}
               alt="Before"
               className="w-full object-cover filter blur-sm brightness-75"
             />
@@ -29,8 +31,8 @@ function ImagePreview(props) {
           />
         ) : (
           <CompareImage
-            leftImage="../Images/before.jpg"
-            rightImage="../Images/after.jpg"
+            leftImage={beforeImage}
+            rightImage={afterImage}
             leftImageLabel="Before"
             rightImageLabel="After"
             sliderLineColor="#38bdf8"
